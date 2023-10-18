@@ -20,7 +20,9 @@
       }
     ],
     "paths": {
-      "@demo/shared": ["tools/demo/index.ts"]
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@yogi/*": ["packages/*"],
+      "@yogi/razorpay-ns": ["packages/razorpay-ns/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,65 @@
+{
+  "name": "razorpay-ns",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/razorpay-ns",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/razorpay-ns",
+        "tsConfig": "packages/razorpay-ns/tsconfig.json",
+        "packageJson": "packages/razorpay-ns/package.json",
+        "main": "packages/razorpay-ns/index.d.ts",
+        "assets": [
+          "packages/razorpay-ns/*.md",
+          "packages/razorpay-ns/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/razorpay-ns/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts razorpay-ns"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/razorpay-ns"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages razorpay-ns"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/razorpay-ns/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

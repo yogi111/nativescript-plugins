@@ -55,12 +55,19 @@ module.exports = {
       },
     },
     '⚙️': {
-      script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-      description: '_____________  @nativescript/*  _____________',
+      script: `npx cowsay "@yogi/* packages will keep your ⚙️ cranking"`,
+      description: '_____________  @yogi/*  _____________',
     },
     // packages
     // build output is always in dist/packages
-    '@nativescript': {
+    '@yogi': {
+      // @yogi/razorpay-ns
+      'razorpay-ns': {
+        build: {
+          script: 'nx run razorpay-ns:build.all',
+          description: '@yogi/razorpay-ns: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -71,8 +78,12 @@ module.exports = {
       description: '_____________  Focus (VS Code supported)  _____________',
     },
     focus: {
+      'razorpay-ns': {
+        script: 'nx run razorpay-ns:focus',
+        description: 'Focus on @yogi/razorpay-ns',
+      },
       reset: {
-        script: 'nx g @nativescript/plugin-tools:focus-packages',
+        script: 'nx g @yogi/plugin-tools:focus-packages',
         description: 'Reset Focus',
       },
     },

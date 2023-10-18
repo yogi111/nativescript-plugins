@@ -1,5 +1,5 @@
 {
-  "npmScope": "nativescript",
+  "npmScope": "yogi",
   "affected": {
     "defaultBase": "master"
   },

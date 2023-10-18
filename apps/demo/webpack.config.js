@@ -2,7 +2,7 @@ const webpack = require('@nativescript/webpack');
 const { resolve } = require('path');
 
 module.exports = (env) => {
-
+  env.appComponents = (env.appComponents || []).concat(['./android.activity']);
   webpack.init(env);
   webpack.useConfig('typescript');
 
@@ -13,8 +13,8 @@ module.exports = (env) => {
 
   // Example if you need to share images across demo apps:
   // webpack.Utils.addCopyRule({
-  //   from: '../../../tools/images', 
-	// 	to: 'images',
+  //   from: '../../../tools/images',
+  // 	to: 'images',
   //   context: webpack.Utils.project.getProjectFilePath('node_modules')
   // });
 
