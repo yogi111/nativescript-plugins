@@ -24,6 +24,7 @@ export interface PaytmOptions {
   callbackurl: string;
   isStagging: boolean;
   enableAppInvoke: boolean;
+  iosScheme?: string;
 }
 
 export class PaytmAllInOneNsCommon {
