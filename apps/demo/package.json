@@ -5,7 +5,8 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "@yogi/razorpay-ns": "file:../../packages/razorpay-ns"
+    "@yogi/razorpay-ns": "file:../../packages/razorpay-ns",
+    "@yogi/paytm-all-in-one-ns": "file:../../packages/paytm-all-in-one-ns"
   },
   "devDependencies": {
     "@nativescript/android": "~8.4.0",

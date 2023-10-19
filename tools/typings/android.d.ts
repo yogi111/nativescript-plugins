@@ -81,4 +81,64 @@ declare module com {
       public postSms(param0: string, param1: string): void;
     }
   }
+
+  export module paytm {
+    export class PaytmOrder {
+      public static class: java.lang.Class<com.paytm.pgsdk.PaytmOrder>;
+      public constructor(param0: string, param1: string, param2: string, param3: string, param4: string);
+      public constructor(param0: java.util.HashMap<string, string>);
+    }
+    export module pgsdk {
+      export class PaytmPaymentTransactionCallback {
+        public static class: java.lang.Class<com.paytm.pgsdk.PaytmPaymentTransactionCallback>;
+        /**
+         * Constructs a new instance of the com.paytm.pgsdk.PaytmPaymentTransactionCallback interface with the provided implementation. An empty constructor exists calling super() when extending the interface class.
+         */
+        public constructor(implementation: { onTransactionResponse(param0: globalAndroid.os.Bundle): void; networkNotAvailable(): void; onErrorProceed(param0: string): void; clientAuthenticationFailed(param0: string): void; someUIErrorOccurred(param0: string): void; onErrorLoadingWebPage(param0: number, param1: string, param2: string): void; onBackPressedCancelTransaction(): void; onTransactionCancel(param0: string, param1: globalAndroid.os.Bundle): void });
+        public constructor();
+        public networkNotAvailable(): void;
+        public onTransactionCancel(param0: string, param1: globalAndroid.os.Bundle): void;
+        public onErrorProceed(param0: string): void;
+        public someUIErrorOccurred(param0: string): void;
+        public onTransactionResponse(param0: globalAndroid.os.Bundle): void;
+        public onBackPressedCancelTransaction(): void;
+        public clientAuthenticationFailed(param0: string): void;
+        public onErrorLoadingWebPage(param0: number, param1: string, param2: string): void;
+      }
+      export class PaytmOrder {
+        public static class: java.lang.Class<com.paytm.pgsdk.PaytmOrder>;
+        public constructor(param0: string, param1: string, param2: string, param3: string, param4: string);
+        public constructor(param0: java.util.HashMap<string, string>);
+      }
+      export class TransactionManager {
+        public static class: java.lang.Class<com.paytm.pgsdk.TransactionManager>;
+        public startTransaction(param0: globalAndroid.app.Activity, param1: number): void;
+        public startTransactionForONUS(param0: globalAndroid.app.Activity, param1: number): void;
+        public constructor(param0: com.paytm.pgsdk.PaytmOrder, param1: com.paytm.pgsdk.PaytmPaymentTransactionCallback);
+        public startTransactionAfterCheckingLoginStatus(param0: globalAndroid.app.Activity, param1: string, param2: number): void;
+        public setEmiSubventionEnabled(param0: boolean): void;
+        public startTransaction(param0: globalAndroid.app.Activity, param1: number, param2: string): void;
+        public constructor();
+        public setAIOFlavour(param0: com.paytm.pgsdk.TransactionManager.Flavour): void;
+        public setShowPaymentUrl(param0: string): void;
+        public setCallingBridge(param0: string): void;
+        public setAppInvokeEnabled(param0: boolean): void;
+        public startTransaction(param0: globalAndroid.app.Activity, param1: boolean, param2: string, param3: string, param4: number): void;
+        public setEnableAssist(param0: boolean): void;
+        public setPcfMerchant(param0: boolean): void;
+        public getCallingBridge(): string;
+        public setSubscriptionFlow(param0: boolean): void;
+        public setRedirectionEnabled(param0: boolean): void;
+      }
+      export module TransactionManager {
+        export class Flavour {
+          public static class: java.lang.Class<com.paytm.pgsdk.TransactionManager.Flavour>;
+          public static ROUTER: com.paytm.pgsdk.TransactionManager.Flavour;
+          public static DEFAULT: com.paytm.pgsdk.TransactionManager.Flavour;
+          public static values(): androidNative.Array<com.paytm.pgsdk.TransactionManager.Flavour>;
+          public static valueOf(param0: string): com.paytm.pgsdk.TransactionManager.Flavour;
+        }
+      }
+    }
+  }
 }

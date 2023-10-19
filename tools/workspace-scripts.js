@@ -68,6 +68,13 @@ module.exports = {
           description: '@yogi/razorpay-ns: Build',
         },
       },
+      // @yogi/paytm-all-in-one-ns
+      'paytm-all-in-one-ns': {
+        build: {
+          script: 'nx run paytm-all-in-one-ns:build.all',
+          description: '@yogi/paytm-all-in-one-ns: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -81,6 +88,10 @@ module.exports = {
       'razorpay-ns': {
         script: 'nx run razorpay-ns:focus',
         description: 'Focus on @yogi/razorpay-ns',
+      },
+      'paytm-all-in-one-ns': {
+        script: 'nx run paytm-all-in-one-ns:focus',
+        description: 'Focus on @yogi/paytm-all-in-one-ns',
       },
       reset: {
         script: 'nx g @yogi/plugin-tools:focus-packages',

@@ -1,0 +1,10 @@
+repositories {
+    maven {
+        url "https://artifactory.paytm.in/libs-release-local"
+    }
+}
+
+
+dependencies {
+    implementation 'com.paytm.appinvokesdk:appinvokesdk:1.6.15'
+}

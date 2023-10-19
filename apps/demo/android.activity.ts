@@ -4,13 +4,13 @@ import { RazorpayNs } from '@yogi/razorpay-ns';
 @NativeClass()
 @Interfaces([com.razorpay.PaymentResultWithDataListener])
 @JavaProxy('org.nativescript.plugindemo.PaymentActivity')
-export class PaymentActivity extends android.app.Activity implements com.razorpay.PaymentResultWithDataListener {
+export class PaymentActivity extends androidx.appcompat.app.AppCompatActivity implements com.razorpay.PaymentResultWithDataListener {
   public isNativeScriptActivity;
 
   private _callbacks: AndroidActivityCallbacks;
 
   public override onCreate(savedInstanceState: android.os.Bundle): void {
-    super.onCreate(savedInstanceState);
+    // super.onCreate(savedInstanceState);
     Application.android.init(this.getApplication());
     // com.razorpay.Checkout.preload(this.getApplication().getApplicationContext());
     // Set the isNativeScriptActivity in onCreate (as done in the original NativeScript activity code)

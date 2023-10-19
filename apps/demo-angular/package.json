@@ -2,7 +2,8 @@
   "main": "./src/main.ts",
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "@yogi/razorpay-ns": "file:../../dist/packages/razorpay-ns"
+    "@yogi/razorpay-ns": "file:../../dist/packages/razorpay-ns",
+    "@yogi/paytm-all-in-one-ns": "file:../../dist/packages/paytm-all-in-one-ns"
   },
   "devDependencies": {
     "@nativescript/android": "~8.4.0",

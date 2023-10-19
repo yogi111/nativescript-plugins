@@ -1,0 +1,65 @@
+{
+  "name": "paytm-all-in-one-ns",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/paytm-all-in-one-ns",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/paytm-all-in-one-ns",
+        "tsConfig": "packages/paytm-all-in-one-ns/tsconfig.json",
+        "packageJson": "packages/paytm-all-in-one-ns/package.json",
+        "main": "packages/paytm-all-in-one-ns/index.d.ts",
+        "assets": [
+          "packages/paytm-all-in-one-ns/*.md",
+          "packages/paytm-all-in-one-ns/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/paytm-all-in-one-ns/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts paytm-all-in-one-ns"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/paytm-all-in-one-ns"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages paytm-all-in-one-ns"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/paytm-all-in-one-ns/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

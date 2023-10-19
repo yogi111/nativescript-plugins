@@ -7,6 +7,7 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'paytm-all-in-one-ns', loadChildren: () => import('./plugin-demos/paytm-all-in-one-ns.module').then((m) => m.PaytmAllInOneNsModule) },
   { path: 'razorpay-ns', loadChildren: () => import('./plugin-demos/razorpay-ns.module').then((m) => m.RazorpayNsModule) },
 ];
 

@@ -1,10 +1,4 @@
-# @yogi/\* plugins
-
-```
-npm run setup
-npm start
-```
-
+- [@yogi/paytm-all-in-one-ns](packages/paytm-all-in-one-ns/README.md)
 - [@yogi/razorpay-ns](packages/razorpay-ns/README.md)
 
 # How to use?
