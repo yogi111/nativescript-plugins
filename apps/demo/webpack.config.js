@@ -2,7 +2,6 @@ const webpack = require('@nativescript/webpack');
 const { resolve } = require('path');
 
 module.exports = (env) => {
-  env.appComponents = (env.appComponents || []).concat(['./android.activity']);
   webpack.init(env);
   webpack.useConfig('typescript');
 
