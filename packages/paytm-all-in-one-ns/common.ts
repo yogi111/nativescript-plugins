@@ -1,5 +1,3 @@
-import { Observable } from '@nativescript/core';
-
 export interface PaytmResponse {
   STATUS: 'TXN_SUCCESS' | 'TXN_FAILURE' | 'PENDING';
   ORDERID: string;

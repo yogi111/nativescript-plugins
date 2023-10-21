@@ -2,6 +2,7 @@ package com.razorpayns;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,6 +15,11 @@ import org.json.JSONObject;
 
 public class PatmentActivity extends Activity implements PaymentResultWithDataListener {
   String TAG = this.getClass().getName();
+
+  @Override
+  public PackageManager getPackageManager() {
+    return super.getPackageManager();
+  }
 
   @Override
   public void onPaymentSuccess(String param0, PaymentData param1) {

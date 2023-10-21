@@ -1,6 +1,5 @@
-import { RazorpayNsCommon } from './common';
-import { IPaymenrResponse, IRazorPayOptions } from '@yogi/razorpay-ns/index';
-import { AndroidApplication, Frame, Application, Utils, setActivityCallbacks, AndroidActivityCallbacks } from '@nativescript/core';
+import { Utils } from '@nativescript/core';
+import { IPaymenrResponse, IRazorPayOptions, RazorpayNsCommon } from './common';
 
 export class RazorpayNs extends RazorpayNsCommon {
   static nativeView: com.razorpay.Checkout = new com.razorpay.Checkout();
@@ -33,14 +32,6 @@ export class RazorpayNs extends RazorpayNsCommon {
           }
         }
       };
-      // const optionStr: string = JSON.stringify(options);
-      // com.razorpay.Checkout.clearUserData(activity);
-      // com.razorpay.Checkout.handleActivityResult = (_activity, _num1, _num2, _intent, _listener, _wallatListener) => {
-      //   debugger;
-      // };
-      // this.nativeView.setKeyID(key);
-      // com.razorpay.Checkout.preload(activity);
-      // this.nativeView.open(activity, new org.json.JSONObject(optionStr));
     });
   }
 }
