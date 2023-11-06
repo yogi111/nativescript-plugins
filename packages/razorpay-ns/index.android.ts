@@ -2,11 +2,11 @@ import { Utils } from '@nativescript/core';
 import { IPaymenrResponse, IRazorPayOptions, RazorpayNsCommon } from './common';
 
 export class RazorpayNs extends RazorpayNsCommon {
-  static nativeView: com.razorpay.Checkout = new com.razorpay.Checkout();
+  nativeView: com.razorpay.Checkout = new com.razorpay.Checkout();
   static REQUEST_CODE = 444333;
-  static reject: (error: any) => any;
-  static resolve: (response: IPaymenrResponse) => any;
-  static open(options: IRazorPayOptions): Promise<IPaymenrResponse> {
+  reject: (error: any) => any;
+  resolve: (response: IPaymenrResponse) => any;
+  open(options: IRazorPayOptions, successCallback: (data: IPaymenrResponse) => void, failuerCallback: (error: any) => void): Promise<IPaymenrResponse> {
     return new Promise<IPaymenrResponse>((resolve, reject) => {
       this.resolve = resolve;
       this.reject = reject;
@@ -25,10 +25,12 @@ export class RazorpayNs extends RazorpayNsCommon {
             const data = intent.getStringExtra('response');
             const response = JSON.parse(data);
             this.resolve(response);
+            successCallback(response);
           } else if (resultcode === android.app.Activity.RESULT_CANCELED) {
             const error = intent.getStringExtra('error');
             const errorcode = intent.getStringExtra('errorcode');
             this.reject({ error, errorcode });
+            failuerCallback({ error, errorcode });
           }
         }
       };

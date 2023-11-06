@@ -61,11 +61,11 @@ export interface IPaymenrResponse {
   razorpay_signature: string;
 }
 export class RazorpayNsCommon {
-  static nativeView: any;
-  static reject: (error: any) => void;
-  static resolve: (response: IPaymenrResponse) => void;
+  nativeView: any;
+  reject: (error: any) => void;
+  resolve: (response: IPaymenrResponse) => void;
 
-  static open(options: IRazorPayOptions): Promise<IPaymenrResponse> {
+  open(options: IRazorPayOptions, successCallback: (data: IPaymenrResponse) => void, failuerCallback: (error: any) => void): Promise<IPaymenrResponse> {
     return Promise.resolve(null);
   }
 }

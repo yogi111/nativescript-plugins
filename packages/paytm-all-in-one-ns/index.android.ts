@@ -15,12 +15,12 @@ const bundleToJson = (bundle: globalAndroid.os.Bundle): PaytmResponse => {
 };
 
 export class PaytmAllInOneNs extends PaytmAllInOneNsCommon {
-  static nativeView: any;
-  private static resolve: (data: PaytmResponse) => any;
-  private static reject: (error: any) => any;
-  private static REQUEST_CODE = 554433;
+  nativeView: any;
+  resolve: (data: PaytmResponse) => any;
+  reject: (error: any) => any;
+  static REQUEST_CODE = 554433;
 
-  static startTransaction(option: PaytmOptions): Promise<PaytmResponse> {
+  startTransaction(option: PaytmOptions): Promise<PaytmResponse> {
     if (!option.mid || option.mid.trim().length == 0 || !option.orderid || option.orderid.trim().length === 0 || !option.txnToken || option.txnToken.trim().length === 0 || !option.amount || option.amount.trim().length === 0 || !option.callbackurl || option.callbackurl.trim().length === 0) {
       Promise.reject(new Error('mid , orderid, txnToken, amount, callbackurl is non empty mandatory fields to start transaction'));
     }

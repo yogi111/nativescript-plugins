@@ -26,8 +26,8 @@ export interface PaytmOptions {
 }
 
 export class PaytmAllInOneNsCommon {
-  static nativeView: any;
-  static startTransaction(option: PaytmOptions): Promise<PaytmResponse> {
+  nativeView: any;
+  startTransaction(option: PaytmOptions): Promise<PaytmResponse> {
     return Promise.resolve(null);
   }
 }
