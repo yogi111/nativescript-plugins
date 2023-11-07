@@ -1,3 +1,4 @@
+import { Application } from '@nativescript/core';
 import { IPaymenrResponse, IRazorPayOptions, RazorpayNsCommon } from './common';
 
 @NativeClass()
@@ -45,7 +46,7 @@ export class RazorpayNs extends RazorpayNsCommon {
       this.nativeView = RazorpayCheckout.initWithKeyAndDelegateWithData(option.key, RazorpayPaymentCompletionProtocolWithDataImp.initWithOwner(new WeakRef(this)));
       delete option.key;
       // @ts-ignore
-      this.nativeView.open(new NSDictionary(Object.values(option), Object.keys(option)));
+      this.nativeView.openDisplayController(new NSDictionary(Object.values(option), Object.keys(option)), Application.ios.rootController);
     });
   }
 }
