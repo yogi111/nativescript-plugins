@@ -23,7 +23,8 @@
       "@demo/shared": ["tools/demo/index.ts"],
       "@yogi/*": ["packages/*"],
       "@yogi/razorpay-ns": ["packages/razorpay-ns/index.d.ts"],
-      "@yogi/paytm-all-in-one-ns": ["packages/paytm-all-in-one-ns/index.d.ts"]
+      "@yogi/paytm-all-in-one-ns": ["packages/paytm-all-in-one-ns/index.d.ts"],
+      "@yogi/google-place-ns": ["packages/google-place-ns/index.d.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

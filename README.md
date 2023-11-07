@@ -1,3 +1,4 @@
+- [@yogi/google-place-ns](packages/google-place-ns/README.md)
 - [@yogi/paytm-all-in-one-ns](packages/paytm-all-in-one-ns/README.md)
 - [@yogi/razorpay-ns](packages/razorpay-ns/README.md)
 

@@ -8,6 +8,7 @@
         <Button text="add a package first" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
 <Button text="razorpay-ns" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
 <Button text="paytm-all-in-one-ns" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+<Button text="google-place-ns" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
       </StackLayout>
     </ScrollView>
   </StackLayout>

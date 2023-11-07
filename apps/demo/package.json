@@ -6,7 +6,8 @@
   "dependencies": {
     "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "@yogi/razorpay-ns": "file:../../packages/razorpay-ns",
-    "@yogi/paytm-all-in-one-ns": "file:../../packages/paytm-all-in-one-ns"
+    "@yogi/paytm-all-in-one-ns": "file:../../packages/paytm-all-in-one-ns",
+    "@yogi/google-place-ns": "file:../../packages/google-place-ns"
   },
   "devDependencies": {
     "@nativescript/android": "~8.4.0",

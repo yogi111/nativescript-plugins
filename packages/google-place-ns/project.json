@@ -1,0 +1,65 @@
+{
+  "name": "google-place-ns",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/google-place-ns",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/packages/google-place-ns",
+        "tsConfig": "packages/google-place-ns/tsconfig.json",
+        "packageJson": "packages/google-place-ns/package.json",
+        "main": "packages/google-place-ns/index.d.ts",
+        "assets": [
+          "packages/google-place-ns/*.md",
+          "packages/google-place-ns/index.d.ts",
+          "LICENSE",
+          {
+            "glob": "**/*",
+            "input": "packages/google-place-ns/platforms/",
+            "output": "./platforms/"
+          }
+        ],
+        "dependsOn": [
+          {
+            "target": "build.all",
+            "projects": "dependencies"
+          }
+        ]
+      }
+    },
+    "build.all": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["node tools/scripts/build-finish.ts google-place-ns"],
+        "parallel": false
+      },
+      "outputs": ["dist/packages/google-place-ns"],
+      "dependsOn": [
+        {
+          "target": "build.all",
+          "projects": "dependencies"
+        },
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ]
+    },
+    "focus": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx g @nativescript/plugin-tools:focus-packages google-place-ns"],
+        "parallel": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/google-place-ns/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

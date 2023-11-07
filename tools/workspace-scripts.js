@@ -75,6 +75,13 @@ module.exports = {
           description: '@yogi/paytm-all-in-one-ns: Build',
         },
       },
+      // @yogi/google-place-ns
+      'google-place-ns': {
+        build: {
+          script: 'nx run google-place-ns:build.all',
+          description: '@yogi/google-place-ns: Build',
+        },
+      },
       'build-all': {
         script: 'nx run-many --target=build.all --all',
         description: 'Build all packages',
@@ -92,6 +99,10 @@ module.exports = {
       'paytm-all-in-one-ns': {
         script: 'nx run paytm-all-in-one-ns:focus',
         description: 'Focus on @yogi/paytm-all-in-one-ns',
+      },
+      'google-place-ns': {
+        script: 'nx run google-place-ns:focus',
+        description: 'Focus on @yogi/google-place-ns',
       },
       reset: {
         script: 'nx g @yogi/plugin-tools:focus-packages',
